@@ -1,6 +1,6 @@
-const nodeExternals = require('webpack-node-externals');
-const dotenv = require('dotenv-safe');
-const webpack = require('webpack');
+import nodeExternals from 'webpack-node-externals';
+import dotenv from 'dotenv-save';
+import webpack from 'webpack';
 
 const env = process.env.NODE_ENV || 'production';
 const dev = env === 'development';
@@ -16,7 +16,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/.netlify': {
-        target: 'http://localhost:9000',
+        target: 'http://localhost:3000',
         pathRewrite: { '^/.netlify/functions': '' }
       }
     }

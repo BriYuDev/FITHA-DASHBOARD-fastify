@@ -12,6 +12,7 @@
     "ejs": "^3.1.10",
     "fastify": "^5.4.0",
     "fastify-html": "^0.7.1",
+    "netlify-lambda": "^2.0.16",
     "tailwindcss": "^4.1.6"
   },
   "devDependencies": {
@@ -24,7 +25,7 @@
   "scripts": {
     "serve": "webpack serve",
     "dev": "node ./src/dev.js",
-    "build:functions": "build functions --config ./webpack.config.netlify.js"
+    "build:functions": "netlify-lambda build functions --config ./webpack.config.netlify.js"
   },
   "type": "module"
 }

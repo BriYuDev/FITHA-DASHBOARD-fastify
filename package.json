@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@fastify/aws-lambda": "^5.1.4",
     "@fastify/cors": "^11.0.1",
     "@fastify/mongodb": "^9.0.2",
     "@fastify/multipart": "^9.0.3",
@@ -23,7 +24,7 @@
   "scripts": {
     "serve": "webpack serve",
     "dev": "node ./src/dev.js",
-    "build:functions": "yarn netlify-lambda build functions --config ./webpack.config.netlify.js"
+    "build:functions": "netlify-lambda build functions --config ./webpack.config.netlify.js"
   },
   "type": "module"
 }

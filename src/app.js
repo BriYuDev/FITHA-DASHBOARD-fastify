@@ -8,31 +8,33 @@ import ejs from 'ejs'
 import fastMulti from '@fastify/multipart'
 
 
-const __dirname = import.meta.dirname;
+async function init(){
+  const __dirname = import.meta.dirname;
 
+  const fastify = Fastify({
+    logger: true
+  })
 
-const fastify = Fastify({
-  logger: true
-})
+  await fastify.register(fastifyCors, { origin: true })
 
-await fastify.register(fastifyCors, {origin : true})
+  await fastify.register(fastMulti)
 
-await fastify.register(fastMulti)
-
-await fastify.register(fastifyView, {
-    engine : {
-        ejs
+  await fastify.register(fastifyView, {
+    engine: {
+      ejs
     },
-    root : path.join(__dirname, "views"),
+    root: path.join(__dirname, "views"),
     viewExt: "ejs",
-})
+  })
 
-await fastify.register(faststatic, {
-  root : path.join(__dirname, "static"),
-  prefix : "/static/"
-})
+  await fastify.register(faststatic, {
+    root: path.join(__dirname, "static"),
+    prefix: "/static/"
+  })
 
-await fastify.register(routes)
+  await fastify.register(routes)
 
+  return fastify
+}
 
-export { fastify }
+module.exports = init;

@@ -4,7 +4,7 @@ import { FastifyFramework } from '@h4ad/serverless-adapter/lib/frameworks/fastif
 import { AwsStreamHandler } from '@h4ad/serverless-adapter/lib/handlers/aws';
 import { DummyResolver } from '@h4ad/serverless-adapter/lib/resolvers/dummy/index.js';
 import { CorsFramework } from '@h4ad/serverless-adapter/frameworks/cors';
-import { fastify } from './server.js';
+import { fastify } from './app.js';
 
 const fastifyFramework = new FastifyFramework
 const options = { origin: true };

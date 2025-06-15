@@ -5,4 +5,4 @@
   # and this is directory of your front of your app
   publish = "src"
   # functions build directory
-  functions = "functions" # always appends `-build` folder to your `functions` folder for builds
+  functions = "functions-build" # always appends `-build` folder to your `functions` folder for builds

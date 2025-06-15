@@ -9,23 +9,28 @@
     "@h4ad/serverless-adapter": "^4.4.0",
     "@tailwindcss/cli": "^4.1.6",
     "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "dotenv-extended": "^2.9.0",
     "ejs": "^3.1.10",
     "fastify": "^5.4.0",
     "fastify-html": "^0.7.1",
     "netlify-lambda": "^2.0.16",
-    "tailwindcss": "^4.1.6"
+    "tailwindcss": "^4.1.6",
+    "webpack-node-externals": "^3.0.0"
   },
   "devDependencies": {
     "@types/ejs": "^3.1.5",
+    "@types/webpack-node-externals": "^3.0.4",
+    "dotenv-save": "^1.2.0",
     "html-webpack-plugin": "^5.6.3",
-    "webpack": "^5.99.8",
+    "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.1"
   },
   "scripts": {
     "serve": "webpack serve",
     "dev": "node ./src/dev.js",
-    "build:functions": "netlify-lambda build functions --config ./webpack.config.netlify.js"
+    "build:functions": "netlify-lambda build functions --config ./webpack.config.netlify.cjs"
   },
-  "type": "module"
+  "type": "commonjs"
 }

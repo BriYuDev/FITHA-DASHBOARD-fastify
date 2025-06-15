@@ -1,7 +1,7 @@
-import { GetRoot } from "../controller/root.controller.js";
-import { PostRoot, GetImgBase64 } from "../controller/img.controller.js";
+const GetRoot = require("../controller/root.controller.js");
+const { PostRoot, GetImgBase64 } = require("../controller/img.controller.js");
 
-export default async function routes(fastify, options) {
+function routes (fastify, options) {
     fastify.route({
         method : "GET",
         url : "/",
@@ -20,3 +20,5 @@ export default async function routes(fastify, options) {
         handler : GetImgBase64
     });
 }
+
+module.exports = routes;

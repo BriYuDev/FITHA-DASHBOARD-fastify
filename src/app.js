@@ -1,25 +1,20 @@
-import Fastify from 'fastify'
-import faststatic from '@fastify/static'
-import routes from './routes/routes.js'
-import path from 'node:path'
-import fastifyView from '@fastify/view'
-import fastifyCors from '@fastify/cors'
-import ejs from 'ejs'
-import fastMulti from '@fastify/multipart'
+const Fastify = require('fastify')
+const path = require('node:path')
+const ejs = require('ejs')
 
 
-async function init(){
-  const __dirname = import.meta.dirname;
+function init(){
+  console.log(path.dirname("."))
 
   const fastify = Fastify({
     logger: true
   })
 
-  await fastify.register(fastifyCors, { origin: true })
+  fastify.register(require('@fastify/cors'), { origin: true })
 
-  await fastify.register(fastMulti)
+  fastify.register(require('@fastify/multipart'))
 
-  await fastify.register(fastifyView, {
+  fastify.register(require('@fastify/view'), {
     engine: {
       ejs
     },
@@ -27,12 +22,12 @@ async function init(){
     viewExt: "ejs",
   })
 
-  await fastify.register(faststatic, {
+  fastify.register(require('@fastify/static'), {
     root: path.join(__dirname, "static"),
     prefix: "/static/"
   })
 
-  await fastify.register(routes)
+  fastify.register(require('./routes/routes.js'))
 
   return fastify
 }

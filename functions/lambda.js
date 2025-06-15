@@ -1,6 +1,6 @@
-import awsLambdaFastify from '@fastify/aws-lambda';
 
-import { init } from '../src/app.js';
+const awsLambdaFastify = require('@fastify/aws-lambda');
+const init = require('../src/app.js')
 
 const proxy = awsLambdaFastify(init())
 

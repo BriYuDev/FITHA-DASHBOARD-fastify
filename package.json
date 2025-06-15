@@ -24,7 +24,7 @@
   "scripts": {
     "serve": "webpack serve",
     "dev": "node ./src/dev.js",
-    "build:functions": "netlify-lambda build functions --config ./webpack.config.netlify.js"
+    "build:functions": "build functions --config ./webpack.config.netlify.js"
   },
   "type": "module"
 }

@@ -19,7 +19,7 @@ function init(){
     engine: {
       ejs
     },
-    root: 'src/views',
+    root: path.join(__dirname, 'views'),
     viewExt: "ejs",
   })
 

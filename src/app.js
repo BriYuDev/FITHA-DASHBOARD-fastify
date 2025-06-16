@@ -5,7 +5,6 @@ const GetRoot = require("./controller/root.controller.js");
 const { PostRoot, GetImgBase64 } = require("./controller/img.controller.js");
 
 function init(){
-  console.log(path.dirname("."))
 
   const fastify = Fastify({
     logger: true
@@ -19,12 +18,12 @@ function init(){
     engine: {
       ejs
     },
-    root: 'https://fitha-dashboard.netlify.app/src/static',
+    root: './views',
     viewExt: "ejs",
   })
 
   fastify.register(require('@fastify/static'), {
-    root: 'https://fitha-dashboard.netlify.app/src/static',
+    root: './static',
     prefix: "/static/"
   })
 

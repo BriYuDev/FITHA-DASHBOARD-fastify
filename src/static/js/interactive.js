@@ -104,7 +104,7 @@ function getValue(){
         console.log("ERROR LE", error);
     }
 
-    const camUrl = "http://192.168.123.200:3000/v1/img";
+    const camUrl = "https://fitha-dashboard.netlify.app/v1/img";
     const xmlCam = new XMLHttpRequest;
     try {
         xmlCam.responseType = "json";
@@ -121,4 +121,4 @@ function getValue(){
 getValue();
 
 counter = 0;
-const intervalId = setInterval(function(){doLoop(20000, intervalId, getValue)}, 2000)
+const intervalId = setInterval(function(){doLoop(20000, intervalId, getValue)}, 3000)

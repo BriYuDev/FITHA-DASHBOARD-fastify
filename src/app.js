@@ -4,6 +4,8 @@ const ejs = require('ejs')
 const GetRoot = require("./controller/root.controller.js");
 const { PostRoot, GetImgBase64 } = require("./controller/img.controller.js");
 
+const rootPath = path.dirname(__dirname)
+
 function init(){
 
   const fastify = Fastify({
@@ -18,12 +20,12 @@ function init(){
     engine: {
       ejs
     },
-    root: '../../src/views',
+    root: path.join(rootPath, 'src/views'),
     viewExt: "ejs",
   })
 
   fastify.register(require('@fastify/static'), {
-    root: '../../src/static',
+    root: path.join(rootPath, 'src/static'),
     prefix: "/static/"
   })
 

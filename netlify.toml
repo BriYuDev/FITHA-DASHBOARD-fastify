@@ -8,7 +8,7 @@
 [functions]
 	directory = "functions"
 	node_bundler = "esbuild" 
-	included_files = ["./src/static", "./src/views"]
+	included_files = ["src/static/**", "src/views/**"]
 
 [[redirects]]
   from = "/*"

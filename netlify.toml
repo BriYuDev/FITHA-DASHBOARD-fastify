@@ -1,8 +1,13 @@
 [build]
   # This will be run the site build
-  # netcommand = "npm run build:functions"
+  # command = "npm run build:functions"
   # This is the directory is publishing to netlify's CDN
   # and this is directory of your front of your app
-  # publish = "src"
+  publish = "src"
   # functions build directory
-  functions = "functions" # always appends `-build` folder to your `functions` folder for builds
+  functions = "functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/api"
+  status = 200

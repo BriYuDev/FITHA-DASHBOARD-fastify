@@ -11,7 +11,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "dotenv-extended": "^2.9.0",
+<<<<<<< HEAD
     "dotenv-save": "^1.2.0",
+=======
+>>>>>>> 8ccd897a87f32ac549b52c7361c7db686dbf99f2
     "ejs": "^3.1.10",
     "fastify": "^5.4.0",
     "fastify-html": "^0.7.1",
@@ -22,6 +25,10 @@
   "devDependencies": {
     "@types/ejs": "^3.1.5",
     "@types/webpack-node-externals": "^3.0.4",
+<<<<<<< HEAD
+=======
+    "dotenv-save": "^1.2.0",
+>>>>>>> 8ccd897a87f32ac549b52c7361c7db686dbf99f2
     "html-webpack-plugin": "^5.6.3",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
@@ -32,5 +39,5 @@
     "dev": "node ./src/dev.js",
     "build:functions": "netlify-lambda build functions --config ./webpack.config.netlify.cjs"
   },
-  "type": "module"
+  "type": "commonjs"
 }

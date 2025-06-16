@@ -1,9 +1,6 @@
-
-const __dirname = import.meta.dirname;
-
 let currentSavedBase64 = []
 
-export async function PostRoot(request, reply) {
+exports.PostRoot = function (request, reply) {
 
     let data = request.body["data"]
     
@@ -12,7 +9,7 @@ export async function PostRoot(request, reply) {
     return "OK"
 }
 
-export async function GetImgBase64(request, reply) {
+exports.GetImgBase64 = function(request, reply) {
     if(request.headers["x-auth-token"] != "FIT12354"){
         return "409 INVALID TOKEN"
     }

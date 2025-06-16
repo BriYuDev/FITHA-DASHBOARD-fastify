@@ -37,4 +37,4 @@ async function init(){
   return fastify
 }
 
-module.exports = init;
+export default { init };

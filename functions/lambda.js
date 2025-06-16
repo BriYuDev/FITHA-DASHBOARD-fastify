@@ -4,4 +4,6 @@ import { init } from '../src/app.js';
 
 const proxy = awsLambdaFastify(init())
 
-exports.handler = proxy;
+console.log(proxy);
+
+export default { proxy };

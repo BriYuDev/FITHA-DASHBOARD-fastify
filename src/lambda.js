@@ -1,4 +1,3 @@
-
 const awsLambdaFastify = require('@fastify/aws-lambda');
 const init = require('./app.js')
 

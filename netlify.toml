@@ -4,8 +4,11 @@
   # This is the directory is publishing to netlify's CDN
   # and this is directory of your front of your app
   publish = "src"
-  # functions build directory
-  functions = "functions"
+
+[functions]
+	directory = "functions"
+	node_bundler = "esbuild" 
+	included_files = ["./src/static", "./src/views"]
 
 [[redirects]]
   from = "/*"

@@ -18,12 +18,12 @@ function init(){
     engine: {
       ejs
     },
-    root: './views',
+    root: '../../src/views',
     viewExt: "ejs",
   })
 
   fastify.register(require('@fastify/static'), {
-    root: './static',
+    root: '../../src/static',
     prefix: "/static/"
   })
 

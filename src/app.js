@@ -19,12 +19,12 @@ function init(){
     engine: {
       ejs
     },
-    root: path.join(__dirname, 'views'),
+    root: 'https://fitha-dashboard.netlify.app/src/static',
     viewExt: "ejs",
   })
 
   fastify.register(require('@fastify/static'), {
-    root: 'src/static',
+    root: 'https://fitha-dashboard.netlify.app/src/static',
     prefix: "/static/"
   })
 

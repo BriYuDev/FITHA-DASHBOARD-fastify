@@ -118,6 +118,9 @@ function getValue(){
     }
 }
 
+camPlaceholder.classList.add("hidden")
+camImg.classList.add("hidden")
+
 getValue();
 
 counter = 0;
